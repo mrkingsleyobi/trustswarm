@@ -6,7 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "hardhat test",
+    "test:coverage": "hardhat coverage",
+    "compile": "hardhat compile",
+    "deploy:testnet": "hardhat run scripts/deploy-contracts.ts --network baseSepolia",
+    "deploy:mainnet": "hardhat run scripts/deploy-contracts.ts --network base",
+    "init:db": "ts-node scripts/init-database.ts",
+    "demo": "ts-node examples/demo-integration.ts",
+    "clean": "hardhat clean && rm -rf .next"
   },
   "dependencies": {
     "@huggingface/transformers": "^3.8.0",
