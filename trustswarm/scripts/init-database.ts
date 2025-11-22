@@ -92,7 +92,6 @@ async function main() {
       embedding,
       occurrences: Math.floor(Math.random() * 50) + 10, // Random historical occurrences
       lastSeen: Date.now() - Math.floor(Math.random() * 30 * 24 * 60 * 60 * 1000), // Random within last 30 days
-      successRate: 0.8 + Math.random() * 0.15, // 80-95% success rate
     })
     console.log(`  ✅ Stored pattern: ${pattern.category} (${id.substring(0, 8)}...)`)
   }
@@ -114,14 +113,14 @@ async function main() {
       address,
       overall: score,
       dimensions: {
-        sentiment: score + Math.floor(Math.random() * 100) - 50,
-        pattern: score + Math.floor(Math.random() * 100) - 50,
-        ner: score + Math.floor(Math.random() * 100) - 50,
-        behavioral: score + Math.floor(Math.random() * 100) - 50,
+        transactionPatterns: score + Math.floor(Math.random() * 100) - 50,
+        entityReputation: score + Math.floor(Math.random() * 100) - 50,
+        sentimentRisk: Math.floor(Math.random() * 100),
+        documentValidity: score + Math.floor(Math.random() * 100) - 50,
+        networkTrust: score + Math.floor(Math.random() * 100) - 50,
       },
       confidence: 0.85 + Math.random() * 0.1,
       riskLevel,
-      transactionCount: Math.floor(Math.random() * 1000) + 100,
       lastUpdated: Date.now(),
       explainability: [`Trust score: ${score}/1000`, `Risk level: ${riskLevel}`],
     })

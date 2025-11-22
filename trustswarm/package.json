@@ -12,8 +12,8 @@
     "compile": "hardhat compile",
     "deploy:testnet": "hardhat run scripts/deploy-contracts.ts --network baseSepolia",
     "deploy:mainnet": "hardhat run scripts/deploy-contracts.ts --network base",
-    "init:db": "ts-node scripts/init-database.ts",
-    "demo": "ts-node examples/demo-integration.ts",
+    "init:db": "tsx scripts/init-database.ts",
+    "demo": "tsx examples/demo-integration.ts",
     "clean": "hardhat clean && rm -rf .next"
   },
   "dependencies": {
@@ -58,6 +58,7 @@
     "eslint-config-next": "16.0.3",
     "hardhat": "^3.0.15",
     "tailwindcss": "^4",
+    "tsx": "^4.20.6",
     "typescript": "^5"
   }
 }
